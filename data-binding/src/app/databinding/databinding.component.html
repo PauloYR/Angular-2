@@ -1,0 +1,80 @@
+<!--
+<section>
+  <article>
+    <h3>Interpolação</h3>
+    <h3>String de Interpolação {{ url }}</h3>
+    <h3>O resultado de 2 * 2 é = {{ 2 * 2 }}</h3>
+    <h3>O resultado de 1 + 1 não e {{ 1 + 1 + getValor() }}</h3>
+    <h3>Curso de  angular  e gosto do curso : {{ cursoAngular && getCurtiCurso()   }}</h3>
+    
+  </article>
+  <article>
+      <h3>Property Binding</h3>
+      <img src="{{ urlImg }}" >
+
+      <img [src]="urlImg" > 
+      <img bind-src="urlImg" > 
+  </article
+    <article>
+    <h3>Class e Style Binding</h3>
+    <div>
+      Selecione uma class :
+      <select #classe (change)="0">
+        <option value="alert-success">Sucesso</option>
+        <option value="alert-info">Informação</option>
+        <option value="alert-warning">Alerta</option>
+        <option value="alert-danger">Erro</option>
+      </select>
+      <br>
+      <br>
+        <div class="alert {{ classe.value }}" role="alert" >
+          Texto colorido !
+        </div>
+        <div class="alert " role="alert" [class.alert-success]="classe.value == 'alert-success'">
+            Sucesso
+        </div>
+        <div class="alert " role="alert" [class.alert-info]="classe.value == 'alert-info'">
+            Informação
+        </div>
+        <div class="alert " role="alert" [class.alert-warning]="classe.value == 'alert-warning'">
+            Alerta
+        </div>
+        <div class="alert " role="alert" [class.alert-danger]="classe.value == 'alert-danger'">
+            Erro
+        </div>
+        <div class="alert alert-danger" role="alert" [style.display] = "classe.value == 'alert-danger' ? 'block' : 'none'" >
+            So aparece no Erro !5
+        </div>
+    </div>
+  </article>
+
+</section>-->
+<section class="event-binding">
+    <article>
+        <h3>Event Binding</h3>
+        
+            <div>
+                <button (click)="botaoClicado()"  class="btn btn-primary">
+                    Me clique!
+                </button>
+            </div>
+        <br>
+        <br>
+
+        <input type="text" 
+        (keyup)="onKeyUp($event)" 
+        (keyup.insert)="salvarValor(campoInput.value)" 
+        (blur)="salvarValor(campoInput.value)" 
+        #campoInput
+        />
+
+        <h3>Valor Atual é: {{ valorAtual }}</h3>
+        <h3>Valor Salvos é: {{ valorSalvo }}</h3>
+
+        <div style="width: 250px;" 
+        (mouseover)="mouseOuverOut()" 
+        (mouseout)="mouseOuverOut()" [class.higlight] = "isMouseOuver" >
+            <p>Passe o mouse sobre min !</p>
+        </div>
+    </article>
+</section>
